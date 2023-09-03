@@ -49,12 +49,12 @@ module.exports = function () {
         price: 1300,
         imageUrl: "7.jpg",
         description: "çok çok iyi",
-      }
+      },
     ],
     categories: [
-        {id:1, name:"Telefon"},
-        {id:2, name:"Bilgisayar"},
-        {id:3, name:"Elektronik"}
+      { id: 1, name: "Telefon" },
+      { id: 2, name: "Bilgisayar" },
+      { id: 3, name: "Elektronik" },
     ],
     orders: [],
   };
