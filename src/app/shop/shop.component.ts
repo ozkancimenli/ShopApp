@@ -7,20 +7,25 @@ import { Category } from "../model/category.model";
 @Component({
     selector: 'shop',
     templateUrl: 'shop.component.html',
-    styles:[`
+    styles: [`
     .pt-100 {padding-top:100px;}
     `]
 })
 export class ShopComponent {
+    private selectedCategory: Category;
 
     constructor(
         private productRepository: ProductRepository,
         private categoryRepository: CategoryRepository
     ) { }
     get products(): Product[] {
-        return this.productRepository.getProducts();
+        return this.productRepository.getProducts(this.selectedCategory);
     }
     get categories(): Category[] {
         return this.categoryRepository.getCategories();
+    }
+    
+    changeCategory(newCategory?: Category ) {
+        this.selectedCategory = newCategory;
     }
 }

@@ -7,6 +7,7 @@ module.exports = function () {
         price: 500,
         imageUrl: "1.jpg",
         description: "çok kötü",
+        category: "Telefon",
       },
       {
         id: 2,
@@ -14,6 +15,7 @@ module.exports = function () {
         price: 600,
         imageUrl: "2.jpg",
         description: "kötü",
+        category: "Telefon",
       },
       {
         id: 3,
@@ -21,6 +23,7 @@ module.exports = function () {
         price: 900,
         imageUrl: "3.jpg",
         description: "idare eder",
+        category: "Telefon",
       },
       {
         id: 4,
@@ -28,6 +31,7 @@ module.exports = function () {
         price: 1000,
         imageUrl: "4.jpg",
         description: "normal",
+        category: "Telefon",
       },
       {
         id: 5,
@@ -35,6 +39,7 @@ module.exports = function () {
         price: 1100,
         imageUrl: "5.jpg",
         description: "iyi",
+        category: "Telefon",
       },
       {
         id: 6,
@@ -42,6 +47,7 @@ module.exports = function () {
         price: 1200,
         imageUrl: "6.jpg",
         description: "çok iyi",
+        category: "Telefon",
       },
       {
         id: 7,
@@ -49,6 +55,7 @@ module.exports = function () {
         price: 1300,
         imageUrl: "7.jpg",
         description: "çok çok iyi",
+        category: "Telefon",
       },
     ],
     categories: [

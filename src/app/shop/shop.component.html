@@ -3,14 +3,26 @@
 <div class="container pt-100 mb-5">
   <div class="row">
     <div class="col-3">
-      <a href="#" class="list-group-item list-group-item-action">kategori 1</a
-      ><a href="#" class="list-group-item list-group-item-action">kategori 2</a
-      ><a href="#" class="list-group-item list-group-item-action">kategori 3</a
-      ><a href="#" class="list-group-item list-group-item-action">kategori 4</a
-      ><a href="#" class="list-group-item list-group-item-action">kategori 5</a>
+      <div class="list-group">
+        <a href="#" (click)="changeCategory()" class="list-group-item list-group-item-action">
+          Tüm Kategoriler
+        </a>
+        <a *ngFor="let c of categories"
+          (click)="changeCategory(c)"
+          href="#"
+          class="list-group-item list-group-item-action"
+          [class.active]="c==selectedCategory">
+          {{ c.name }}
+        </a>
+      </div>
     </div>
     <div class="col-9">
       <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-warning">
+            {{products.length }} tane ürün bulundu.
+          </div>
+        </div>
         <ng-container *ngFor="let p of products">
           <div class="col-md-4">
             <div class="card mb-3">
