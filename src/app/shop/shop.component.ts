@@ -12,9 +12,10 @@ import { Category } from "../model/category.model";
     `]
 })
 export class ShopComponent {
-    public selectedCategory: Category = null;
-    public productsPerPage = 3;
+    public selectedCategory: Category;
+    public productsPerPage = 2;
     public selectedPage = 1;
+    newPageNumbers = [1, 2, 3, 4, 5];
 
 
     constructor(
@@ -29,11 +30,26 @@ export class ShopComponent {
             .slice(index, index + this.productsPerPage);
     }
 
+    get pageNumbers(): number[] {
+        return Array(Math.ceil(this.productRepository
+            .getProducts(this.selectedCategory)
+            .length / this.productsPerPage))
+            .fill(0)
+            .map((a, i) => i + 1)
+    }
+
+    changePage(p: number) {
+        this.selectedPage = p;
+    }
+
     get categories(): Category[] {
         return this.categoryRepository.getCategories();
     }
 
     changeCategory(newCategory?: Category) {
-        this.selectedCategory = newCategory;
+        if (newCategory) {
+            this.selectedCategory = newCategory;
+        }
+        return this.selectedCategory;
     }
 }
