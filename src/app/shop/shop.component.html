@@ -28,7 +28,18 @@
       <div class="row">
         <div class="col-md-12">
           <div class="alert alert-warning">
-            {{ products.length }} tane ürün bulundu.
+            <div class="form-inline float-end m-0 p-0">
+              <select class="form-control-sm"
+              [value]="productsPerPage"
+              (change)="changePageSize($any($event.target).value)">
+                <option value="2">2 tane</option>
+                <option value="3">3 tane</option>
+                <option value="4">4 tane</option>
+                <option value="6">6 tane</option>
+                <option value="8">8 tane</option>
+              </select>
+            </div>
+            {{ selectedProducts.length }} tane ürün bulundu.
           </div>
         </div>
         <ng-container *ngFor="let p of products">
@@ -49,7 +60,7 @@
                 <button class="btn btn-outline-primary btn-sm">Details</button>
                 <button
                   (click)="addProductToCart(p)"
-                  class="btn btn-outline-primary btn-sm m-3"
+                  class="btn btn-outline-primary btn-sm ms-3"
                 >
                   Add To Cart
                 </button>
