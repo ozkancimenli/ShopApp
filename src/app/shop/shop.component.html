@@ -6,22 +6,22 @@
       <cart-summary></cart-summary>
 
       <div class="list-group">
-        <a
-          href="#"
+        <button
+          
           (click)="changeCategory()"
           class="list-group-item list-group-item-action"
         >
           Tüm Kategoriler
-        </a>
-        <a
+        </button>
+        <button
           *ngFor="let c of categories"
           (click)="changeCategory(c)"
-          href="#"
+          
           class="list-group-item list-group-item-action"
           [class.active]="c == selectedCategory"
         >
           {{ c.name }}
-        </a>
+        </button>
       </div>
     </div>
     <div class="col-9">
@@ -49,7 +49,7 @@
                 <button class="btn btn-outline-primary btn-sm">Details</button>
                 <button
                   (click)="addProductToCart(p)"
-                  class="btn btn-outline-primary btn-sm ml-3"
+                  class="btn btn-outline-primary btn-sm m-3"
                 >
                   Add To Cart
                 </button>
