@@ -12,24 +12,35 @@ import { ProductRepository } from 'src/app/model/product.repository';
 })
 export class ProductListComponent implements OnInit {
   @Input() products: Product[] = [];
-p: any;
-public selectedCategory: Category;
-    public productsPerPage = 2;
-    public selectedPage = 1;
-    newPageNumbers = [1, 2, 3, 4, 5];
-    public selectedProducts: Product[] = [];
+
+  selectedProduct: Product | undefined;
+
+  public selectedCategory: Category;
+  public productsPerPage = 2;
+  public selectedPage = 1;
+  newPageNumbers = [1, 2, 3, 4, 5];
+  public selectedProducts: Product[] = [];
 
   constructor(private cart: Cart,
-    private router:Router,
-    private productRepository: ProductRepository,) { 
-    
+    private router: Router,
+    private productRepository: ProductRepository,) {
+
   }
-  ngOnInit(): void {
+  ngOnInit() {
 
   }
   addProductToCart(product: Product) {
     this.cart.addItem(product);
     this.router.navigateByUrl('/cart');
   }
+  displayDetails(product: Product) {
+    this.selectedProduct = product;
+
+  }
+  hideDetails() {
+    this.selectedProduct = undefined;
+  }
+
+
 }
 
