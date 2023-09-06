@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
 @Component({
     selector: 'shop',
     templateUrl: 'shop.component.html',
-  
+
 })
 export class ShopComponent {
     public selectedCategory: Category;
@@ -21,18 +21,17 @@ export class ShopComponent {
 
     constructor(
         private productRepository: ProductRepository,
-        private categoryRepository: CategoryRepository,
-        private cart: Cart,
-        private router:Router
+
+
     ) { }
 
     get products(): Product[] {
         let index = (this.selectedPage - 1) * this.productsPerPage;
-        
+
         this.selectedProducts = this.productRepository
-        .getProducts(this.selectedCategory);
-        
-        return  this.selectedProducts
+            .getProducts(this.selectedCategory);
+
+        return this.selectedProducts
             .slice(index, index + this.productsPerPage);
     }
 
@@ -48,24 +47,15 @@ export class ShopComponent {
         this.selectedPage = p;
     }
 
-    changePageSize(size: number){
-        this.productsPerPage= size;
+    changePageSize(size: number) {
+        this.productsPerPage = size;
         this.changePage(1);
     }
 
-    get categories(): Category[] {
-        return this.categoryRepository.getCategories();
+    getCategory(category: Category) {
+        this.selectedCategory = category;
     }
 
-    changeCategory(newCategory?: Category) {
-        if (newCategory) {
-            this.selectedCategory = newCategory;
-        }
-        return this.selectedCategory;
-    }
 
-    addProductToCart(product: Product) {
-        this.cart.addItem(product);
-        this.router.navigateByUrl('/cart');
-    }
+
 }
