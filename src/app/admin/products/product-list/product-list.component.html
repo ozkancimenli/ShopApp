@@ -8,7 +8,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let p of getProducts()">
+        <tr *ngFor="let p of getProducts(null)">
+
+
             <td>
                 <img src="/assets/img/{{p.imageUrl}}" width="50">
             </td>
