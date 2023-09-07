@@ -16,7 +16,7 @@ export class ProductRepository {
 
 
     getProduct(id: number): Product | undefined{
-        return this.products.find(i => i.id === id);
+        return this.products.find(i => i.id == id);
     }
 
     getProducts(category: Category ): Product[] {
