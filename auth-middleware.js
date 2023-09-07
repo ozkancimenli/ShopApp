@@ -16,24 +16,25 @@ module.exports = function (req, res, next) {
     return;
   } else {
     if (
-      (req.url.startWith("/products") || req.url.startWith("/categories")) &&
+      (req.url.startsWith("/products") || req.url.startsWith("/categories")) &&
       req.method != "GET"
     ) {
       let token = req.headers["authorization"];
-
-      if (token!=null && token.startWith('Bearer<')) {
-        token= token.substring(7, token.length);
-        try{
-            jwt.verify(token, app_secret);
-            next();
-            return;
-        }
-        catch(err){}
+      
+      if (token != null && token.startsWith('Bearer <')) {
+        token = token.substring(7, token.length);
+        try {
+          jwt.verify(token, app_secret);
+          next();
+          return;
+        } catch (err) {}
       }
-      res.statusCode=401;
+      res.statusCode = 401;
       res.end();
       return;
     }
+    
+    
   }
   next();
 };
