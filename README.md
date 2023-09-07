@@ -1,27 +1,49 @@
 # ShopApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+ShopApp, Angular 16 ile geliştirilen bir alışveriş uygulamasıdır.
 
-## Development server
+## Özellikler
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Json Server
+- Http Methods
+- Repository
+- Navbar
+- Product List
+- Category Menu
+- Category Filter
+- Add to cart
+- Url Routing
+- Orders
+- Product detail
+-  Admin Module
+-  Authentication
+-  Authentication with JWT
+-  Auth Guards
+- Login
+- Logout
+- Add product
+- Edit product
+- Add category
+- Edit category
+- Delete product
+ 
+    
+## Kurulum
 
-## Code scaffolding
+Projeyi yerel makinenize klonlayın ve gerekli bağımlılıkları yükleyin.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+git clone https://github.com/ozkancimenli/ShopApp.git
+cd ShopApp
+npm install
+```
 
-## Build
+## Kullanım
+Projeyi başlatın:
+```bash
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+ng serve
+```
+Tarayıcınızı açın ve http://localhost:4200 adresine gidin.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Uygulamayı kullanmaya başlayın!
